@@ -3,5 +3,53 @@
 // Test verification with correct proof
 // - use the contents from proof.json generated from zokrates steps
 
-    
 // Test verification with incorrect proof
+
+var Verifier = artifacts.require("Verifier");
+
+var proof = {
+  proof: {
+    a: [
+      "0x0cc65f7eb01d13ef03223f4d66f72552cbec4e63d110410c9ed9956a6d135834",
+      "0x2250390b590864582c29b48a98d20b306e66f2d714d2178abffc2c869e4ad9c4",
+    ],
+    b: [
+      [
+        "0x0ee24b9cb0cf8446f0292408924b07c220b9b93b56bb3000b580a9a378752d2f",
+        "0x1fdf6f366fce724fee8f988d0720e8b6a3d935fd728f8784578afdbdcdd21c34",
+      ],
+      [
+        "0x180288f535674c9b57648e7f1da22d17fab26523138532fcd4b81f45856f8fa1",
+        "0x01b8b37e9c52c84cd901522ebbebbc954013a2b255976b1df6012c2d16cae55d",
+      ],
+    ],
+    c: [
+      "0x148c31e1d4b04f8bf9a7834a23314512ebf5d2cd0704a8bc79f636e756388b4a",
+      "0x1c93d780231dea2850b30a82110e5823502bc5b327f5065277e2a845327f5c36",
+    ],
+  },
+  inputs: [
+    "0x0000000000000000000000000000000000000000000000000000000000000009",
+    "0x0000000000000000000000000000000000000000000000000000000000000001",
+  ],
+};
+
+contract("Verifier", (accounts) => {
+  describe("check proofs", function () {
+    beforeEach(async function () {
+      this.contract = await Verifier.new({ from: accounts[0] });
+    });
+
+    it("correct inputs", async function () {
+      let result = await this.contract.verifyTx(proof.proof, proof.inputs);
+      console.log("result", result);
+      assert.equal(result, true, "Verification should pass");
+    });
+
+    it("incorrect inputs", async function () {
+      let result = await this.contract.verifyTx(proof.proof, [5, 6]);
+      console.log("result", result);
+      assert.equal(result, false, "Verification should not pass");
+    });
+  });
+});
