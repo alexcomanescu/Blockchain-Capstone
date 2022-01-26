@@ -28,7 +28,11 @@ contract("TestERC721Mintable", (accounts) => {
     it("should return token uri", async function () {
       let result = await this.contract.tokenURI(1);
       console.log("token URI", result);
-      //assert.equal(result, 1, "Balance should be 1");
+      assert.equal(
+        result,
+        "https://s3-us-west-2.amazonaws.com/udacity-blockchain/capstone/1",
+        "Incorrect token URI"
+      );
     });
 
     it("should transfer token from one owner to another", async function () {});
