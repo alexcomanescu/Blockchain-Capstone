@@ -35,7 +35,21 @@ contract("TestERC721Mintable", (accounts) => {
       );
     });
 
-    it("should transfer token from one owner to another", async function () {});
+    it("should transfer token from one owner to another", async function () {
+      let old_owner = await this.contract.ownerOf(1);
+
+      console.log("old owner", old_owner);
+
+      await this.contract.transferFrom(account_one, account_two, 1, {
+        from: account_one,
+      });
+
+      let new_owner = await this.contract.ownerOf(1);
+
+      console.log("new_owner", new_owner);
+
+      assert.equal(new_owner, account_two, "The new owner is incorrect");
+    });
   });
 
   describe("have ownership properties", function () {
@@ -43,8 +57,24 @@ contract("TestERC721Mintable", (accounts) => {
       this.contract = await CustomERC721Token.new({ from: account_one });
     });
 
-    it("should fail when minting when address is not contract owner", async function () {});
+    it("should fail when minting when address is not contract owner", async function () {
+      let hasError = false;
+      try {
+        await this.contract.mint(account_one, 1, { from: account_two });
+      } catch (error) {
+        //console.log("Mint error", error);
+        hasError = error.reason == "Caller is not contract owner";
+      }
+      assert.equal(
+        hasError,
+        true,
+        "Should fail if minting from another account"
+      );
+    });
 
-    it("should return contract owner", async function () {});
+    it("should return contract owner", async function () {
+      let owner = await this.contract.getOwner();
+      assert.equal(account_one, owner, "Incorrect owner");
+    });
   });
 });
