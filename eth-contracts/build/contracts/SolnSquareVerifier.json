@@ -652,13 +652,13 @@
           }
         ],
         "contractDependencies": [
-          1013,
-          1397,
-          520,
-          1311,
-          1436,
           408,
           474,
+          520,
+          1013,
+          1397,
+          1311,
+          1436,
           7704
         ],
         "contractKind": "contract",
@@ -3918,13 +3918,13 @@
       {
         "attributes": {
           "contractDependencies": [
-            1013,
-            1397,
-            520,
-            1311,
-            1436,
             408,
             474,
+            520,
+            1013,
+            1397,
+            1311,
+            1436,
             7704
           ],
           "contractKind": "contract",
@@ -7468,8 +7468,7 @@
     }
   },
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-02-16T22:07:27.020Z",
-  "networkType": "ethereum",
+  "updatedAt": "2022-02-19T13:29:23.612Z",
   "devdoc": {
     "methods": {
       "isApprovedForAll(address,address)": {
