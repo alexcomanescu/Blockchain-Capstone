@@ -32,6 +32,10 @@ The OpenSea storefront is:
 
 https://testnets.opensea.io/alexcomanescu
 
+10 tokens where minted using this account: 0x8389597e9665D0488C50B8F2FbAe4198c4A20CdC
+
+5 tokens where bought by this account: 0x119492D3a6A7AA69d75A19F77d2acdbc6bc8CE31
+
 # Project Resources
 
 - [Remix - Solidity IDE](https://remix.ethereum.org/)
