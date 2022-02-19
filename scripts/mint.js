@@ -37,11 +37,11 @@ async function main() {
   try {
     for (let i = 0; i < proofs.length; i++) {
       let p = proofs[i].proof;
-
+      console.log("minting ", i + 1);
       let result = await contract.methods
         .mintVerifiedToken(
           accounts[0],
-          1,
+          i + 1,
           p.a[0],
           p.a[1],
           p.b[0],
@@ -55,7 +55,7 @@ async function main() {
           gas: 2999999,
         });
 
-      console.log(result);
+      //console.log(result);
     }
   } catch (err) {
     console.log(err);
