@@ -2,7 +2,7 @@
 
 The capstone will build upon the knowledge you have gained in the course in order to build a decentralized housing product.
 
-The tools that were used:
+## Tools
 
 Truffle v5.4.33 (core: 5.4.33)
 Ganache v7.0.1
@@ -12,29 +12,30 @@ Web3.js v1.5.3
 
 To compile and test, please open two terminal windows:
 
-# Terminal 1:
+##### Terminal 1:
 
-ganache-cli
+`ganache-cli`
 
-# Terminal 2:
+##### Terminal 2:
 
-cd eth-contracts
+`cd eth-contracts`
 
-truffle compile
+`truffle compile`
 
-truffle test
+`truffle test`
 
-The Rinkeby contract is:
+## Rinkeby contract
 
 https://rinkeby.etherscan.io/address/0x97c5e50e8c136fd3ea35cba1e5c4ff1c35a1c5bc
 
-The OpenSea storefront is:
+## OpenSea storefronts:
 
-https://testnets.opensea.io/alexcomanescu
+##### The first one, that also had originally all 10 tokens:
+https://testnets.opensea.io/0x8389597e9665D0488C50B8F2FbAe4198c4A20CdC
 
-10 tokens where minted using this account: 0x8389597e9665D0488C50B8F2FbAe4198c4A20CdC
+##### The one that bought 5 of them:
+https://testnets.opensea.io/0x119492d3a6a7aa69d75a19f77d2acdbc6bc8ce31
 
-5 tokens where bought by this account: 0x119492D3a6A7AA69d75A19F77d2acdbc6bc8CE31
 
 # Project Resources
 
