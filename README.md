@@ -24,9 +24,21 @@ To compile and test, please open two terminal windows:
 
 `truffle test`
 
-## Rinkeby contract
+## ABI
+
+You can find the ABIs in the following folder:
+
+eth-contracts/build/contracts/
+
+## Rinkeby contracts
+
+##### SolnSquareVerifier
 
 https://rinkeby.etherscan.io/address/0x97c5e50e8c136fd3ea35cba1e5c4ff1c35a1c5bc
+
+##### Verifier
+
+https://rinkeby.etherscan.io/address/0x94B78835eC7F624818c30DE463e87b4E21C59dC1
 
 ## OpenSea storefronts:
 
